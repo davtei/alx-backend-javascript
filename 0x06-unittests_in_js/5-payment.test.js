@@ -7,7 +7,7 @@ describe('sendPaymentsToApi', () => {
 
   beforeEach(() => {
     if (!spy) {
-      spy = sinon.spy(console, 'log');
+      spy = sinon.spy(console);
     }
   });
 
