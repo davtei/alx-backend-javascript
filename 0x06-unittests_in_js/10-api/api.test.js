@@ -35,7 +35,7 @@ describe('API Integration Testing', () => {
   });
 
   it('POST /login returns a valid response', (done) => {
-    request.post(`${url}/login`, { form: { userName: 'Betty' } }, (_err, res, body) => {
+    request.post(`${url}/login`, { json: { userName: 'Betty' } }, (_err, res, body) => {
       expect(res.statusCode).to.be.equal(200);
       expect(body).to.be.equal('Welcome Betty');
       done();
