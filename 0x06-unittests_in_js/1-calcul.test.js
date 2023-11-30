@@ -151,5 +151,14 @@ describe('calculateNumber', () => {
     it('should return NaN when dividing 0 by -0', () => {
       assert.equal(isNaN(calculateNumber('DIVIDE', 0, -0)), true);
     });
+    it('should return Error when dividing 1 by 0', () => {
+      assert.equal(isNaN(calculateNumber('DIVIDE', 1, 0)), true);
+    });
+    it('should return Error when dividing -1 by 0', () => {
+      assert.equal(isNaN(calculateNumber('DIVIDE', -1, 0)), true);
+    });
+    it('should return Error when dividing 1 by -0', () => {
+      assert.equal(isNaN(calculateNumber('DIVIDE', 1, -0)), true);
+    });
   });
 });
