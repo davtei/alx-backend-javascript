@@ -19,4 +19,11 @@ describe('API Integration Testing', () => {
       done();
     });
   });
+  it('GET /cart/:id returns error for non-numeric :id', (done) => {
+    request.get(`${url}/cart/abc`, (_err, res, body) => {
+      expect(res.statusCode).to.be.equal(400);
+      expect(body).to.be.equal('Invalid ID');
+      done();
+    });
+  });
 });
