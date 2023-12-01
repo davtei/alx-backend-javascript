@@ -34,18 +34,18 @@ describe('API Integration Testing', () => {
     });
   });
 
-  it('POST /login returns a valid response', (done) => {
-    request.post(`${url}/login`, { json: { userName: 'Betty' } }, (_err, res, body) => {
+  it('GET /available_payments returns the correct response', (done) => {
+    request.get(`${url}/available_payments`, (_err, res, body) => {
       expect(res.statusCode).to.be.equal(200);
-      expect(body).to.be.equal('Welcome Betty');
+      expect(body).to.be.equal({ payment_methods: { credit_cards: true, paypal: false } });
       done();
     });
   });
 
-  it('GET /available_payments returns the correct response', (done) => {
-    request.get(`${url}/available_payments`, (_err, res, body) => {
+  it('POST /login returns a valid response', (done) => {
+    request.post(`${url}/login`, { json: { userName: 'Betty' } }, (_err, res, body) => {
       expect(res.statusCode).to.be.equal(200);
-      expect(body).to.be.equal('{"payment_methods":{"credit_cards":true, "paypal":false}}');
+      expect(body).to.be.equal('Welcome Betty');
       done();
     });
   });
