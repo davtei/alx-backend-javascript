@@ -115,8 +115,8 @@ describe('calculateNumber', () => {
     it('should return 0.5 when dividing 1.5 by 3.7', () => {
       expect(calculateNumber('DIVIDE', 1.5, 3.7)).to.equal(0.5);
     });
-    it('should return isNaN when dividing 0.1 by 0.3', () => {
-      expect(isNaN(calculateNumber('DIVIDE', 0.1, 0.3))).to.equal(true);
+    it('should return Error when dividing 0.1 by 0.3', () => {
+      expect(calculateNumber('DIVIDE', 0.1, 0.3)).to.equal('Error');
     });
     it('should return 0.3333333333333333 when dividing -1 by -3', () => {
       expect(calculateNumber('DIVIDE', -1, -3)).to.equal(0.3333333333333333);
@@ -130,8 +130,8 @@ describe('calculateNumber', () => {
     it('should return 0.25 when dividing -1.5 by -3.7', () => {
       expect(calculateNumber('DIVIDE', -1.5, -3.7)).to.equal(0.25);
     });
-    it('should return isNaN when dividing -0.1 by -0.3', () => {
-      expect(isNaN(calculateNumber('DIVIDE', -0.1, -0.3))).to.equal(true);
+    it('should return Error when dividing -0.1 by -0.3', () => {
+      expect(calculateNumber('DIVIDE', -0.1, -0.3)).to.equal('Error');
     });
     it('should return -0.25 when dividing -1 by 3.7', () => {
       expect(calculateNumber('DIVIDE', -1, 3.7)).to.equal(-0.25);
@@ -145,11 +145,11 @@ describe('calculateNumber', () => {
     it('should return -0.3333333333333333 when dividing 1 by -3.3', () => {
       expect(calculateNumber('DIVIDE', 1, -3.3)).to.equal(-0.3333333333333333);
     });
-    it('should return NaN when dividing 0 by 0', () => {
-      expect(isNaN(calculateNumber('DIVIDE', 0, 0))).to.equal(true);
+    it('should return Error when dividing 0 by 0', () => {
+      expect(isNaN(calculateNumber('DIVIDE', 0, 0))).to.equal('Error');
     });
-    it('should return NaN when dividing 0 by -0', () => {
-      expect(isNaN(calculateNumber('DIVIDE', 0, -0))).to.equal(true);
+    it('should return Error when dividing 0 by -0', () => {
+      expect(calculateNumber('DIVIDE', 0, -0)).to.equal('Error');
     });
   });
 });
