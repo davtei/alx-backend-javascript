@@ -21,14 +21,14 @@ describe('API Integration Testing', () => {
   });
 
   it('GET /cart/:id returns a 404 for negative numbers', (done) => {
-    request.get(`${url}/cart/-1`, (_err, res, body) => {
+    request.get(`${url}/cart/-1`, (_err, res, _body) => {
       expect(res.statusCode).to.be.equal(404);
       done();
     });
   });
 
   it('GET /cart/:id returns a 404 for non-numeric numbers in :id', (done) => {
-    request.get(`${url}/cart/a1`, (_err, res, body) => {
+    request.get(`${url}/cart/a1`, (_err, res, _body) => {
       expect(res.statusCode).to.be.equal(404);
       done();
     });
