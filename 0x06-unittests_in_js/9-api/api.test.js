@@ -21,7 +21,7 @@ describe('API Integration Testing', () => {
   });
   it('GET /cart/:id returns error for non-numeric :id', (done) => {
     request.get(`${url}/cart/abc`, (_err, res, body) => {
-      expect(res.statusCode).to.be.equal(400);
+      expect(res.statusCode).to.be.equal(404);
       expect(body).to.be.equal('Invalid ID');
       done();
     });
