@@ -25,4 +25,10 @@ describe('API Integration Testing', () => {
       done();
     });
   });
+  it('GET /cart/:id returns error for negative :id', (done) => {
+    request.get(`${url}/cart/-32`, (_err, res, body) => {
+      expect(res.statusCode).to.be.equal(404);
+      done();
+    });
+  });
 });
